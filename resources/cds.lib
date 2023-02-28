@@ -1,0 +1,3 @@
+SOFTINCLUDE /opt/cadence/installs/IC617/share/cdssetup/cds.lib
+DEFINE gpdk180 /opt/cadence/designkits/kits/gpdk180_v3.3/libs.oa22/gpdk180
+DEFINE substrateLib /opt/cadence/designkits/kits/gpdk180_v3.3/libs.oa22/substrateLib
