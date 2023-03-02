@@ -1,0 +1,46 @@
+Topics:
+
+0. Attendance list
+    please balance youselves out to max 14 students/lesson
+
+1. Scoring
+    50 points for the lab [note: 15 points at the final exam is the minimum in order to pass]
+    will be obtained via: tests (ex: Linux commands), tasks during the lab, possibly some homweork, and the colloquium
+
+2. Resources
+    This repo, obviously
+    Youtube recordings (all you need to know in ADE-XL)
+    cds.lib file example
+    tutorial .pdf (for ade-l)
+    keybinding .pdf
+    BSIM 3v3 .pdf (Vth eq. 2.1.25, u0 eq. 2.2.4 and Id subthreshold eq. 2.7.1)
+
+3. Linux console commands
+    the '--help' flag (almost all commands support it)
+    pwd     [print working directory]
+    cd      [change directory] (abs path, relative path, and '-')
+    ls      [list](no args, '-a', '-l', '--help', and with a path)
+    mv      [move]
+    mkdir   [make directory]
+    rmdir   [remove directory]
+    rm      [remove file (default)] (recursive flag)
+    cp      [copy]
+    chmod   [change access modifiers] (+w and +x)
+    cat     [concatenate]
+    grep    [global regular expression print]
+    |       [pipeline]
+    history
+    gedit (text editor)
+    clear
+    
+4. cds.lib file
+    SOFTINCLUDE vs. DEFINE
+    what is a PDK?
+    following a cds.lib softinclude path
+
+5. launching Cadence Virtuoso
+    CIW     [command interpreter window]
+    creating a new library
+    creating a new cell
+    the schematic editor
+    ADE-L vs ADE-XL [Analog Design Environment]
