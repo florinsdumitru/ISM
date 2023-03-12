@@ -1,0 +1,87 @@
+Topics:
+
+0. Synchronization
+    has everyone created their personal directory (ex: 43XX_SURNAME_NAME)?
+    has everyone cloned the ISM git repository?
+    let's execute a 'git pull' and see what happens
+    do we all have our cds.lib? let's check the content via a 'cat' command
+    has everyone created a 'lab_01' library and attached the technology at least once?
+    has everyone created a 'inv' schematic with only one ground instance (lib: analog lib, cell: gnd)?
+    what's the difference between 'save' and 'check and save'? why one do we *always* use?
+
+1. Library creation and impact on cds.lib
+    create a new library 'lab_02' and attach the technology
+    print the content of your cds.lib file to observe the changes
+
+2. Discuss basic schematic editor keybindings
+
+    Warning #1: capslock influences all keybindings!
+                whenever the tools is behaving strangely, check your capslock
+
+    Warning #2: to cancel a command, press ESC
+
+    Shift + x - check and save
+
+            u - undo
+    Shift + u - redo
+
+            w - wire
+    Shift + w - thick wire
+            i - add instance
+            f - fit to screen
+            l - label (to be placed on a wire)
+            n - add note (shape) - draw lines, circles, anything you want
+    Shift + n - add note (text) - write down instructions/mementos
+            p - add pin (required for symbol connectivity)
+            q - edit instance (object) properties
+
+            r - rotate
+            m - stretch
+    Shift + m - move
+
+3. Useful buttons in the GUI
+    circle
+    elipse
+    line
+
+4. Task: draw a digital inverter (logic gate) at transistor level and prepare its testbench
+    draw inverter schematic with explicit pins for in, out, gnd, vdd
+    electric connectivity achieved using labels
+    pin direction (in = input, out = output, gnd = inout, vdd = inout)
+    devize sizing (L_NMOS = 180n, W_NMOS = 2u, L_PMOS = 180n, W_PMOS = width_pmos)
+    draw standard inverter symbol
+        automatically generated symbol vs. custom symbol
+        Warning: unique schematic pins must match unique symbol pins 1:1!
+        selection boxes, demonstrate behavior on pdk transistors
+        setting the symbol's origin
+    draw inverter testbench schematic
+        the importance of 'gnd' (analogLib -> gnd)
+        Warning: never attempt to rename/override the ground net's name! (there are consequences)
+        how do global nets work? (examples: gnd! or vdd!)
+        DUT - device under test (lab_02 -> inv)
+        no connection symbol - basic -> noConn (used for warning suppression)
+        know your multiples (a f p n u m <--> k M G T)
+        labeling instances (VSRC_VDD, VSRC_VIN, I_DUT)
+        staying on-grid
+        test conditions (process = nominal, supply = 3.3 V, temp = 27 deg C, aka PVT)
+    configure ADE-XL testbench
+        there's an ADE-L hiding in there
+        checking for design variables
+        setting the analysis
+        saving outputs
+        Warning: do no run simulations (i.e. press the green button) from ADE-L
+        corners, getting the model file path, {NN, FF, SS, SF, FS} explained, bonus: {stat}
+        how can we manually netlist & having a look at a netlist
+    run testbench {.op} and review results
+        simulation output log (and in case of errors, identifying their source)
+        results browser
+        simulation database structure (dcOp, dc, tran, etc.)
+        .op sims are special (since they're only one point, plotting them isn't that simple)
+    reviewing results using VIVA - virtuoso visualization and analysis
+        cursors (keybindings V and H) vs. markers (keybindings M), marker pairs (M + D)
+        CTRL + scroll & SHIFT + scroll for playing with the X & Y axis
+        double check your setup -- I_VSRC_VDD = 222 uA, VOUT = 3.047 V
+        finally, intentionally interrupting ground
+5. Next time:
+    10 minute task (test) similar to lab_01, some practice is advised
+    running testbenches {.tran .dc .ac}
