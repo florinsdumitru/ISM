@@ -39,16 +39,20 @@ Topics:
             m - stretch
     Shift + m - move
 
+            middle button (press and hold it while moving the mouse)
+
 3. Useful buttons in the GUI
     circle
     elipse
     line
 
 4. Task: draw a digital inverter (logic gate) at transistor level and prepare its testbench
-    draw inverter schematic with explicit pins for in, out, gnd, vdd
-    electric connectivity achieved using labels
-    pin direction (in = input, out = output, gnd = inout, vdd = inout)
-    devize sizing (L_NMOS = 180n, W_NMOS = 2u, L_PMOS = 180n, W_PMOS = width_pmos)
+    draw inverter schematic
+        use explicit pins for in, out, gnd, vdd
+        pin direction (in = input, out = output, gnd = inout, vdd = inout) and its effect on the symbol view
+        Note: explain electric connectivity achieved using labels
+        devize sizing (L_NMOS = 180n, W_NMOS = 2u, L_PMOS = 180n, W_PMOS = 6u (will use 'width_pmos' parameter later on))
+        discuss how NMOS and PMOS substrates need to be connected & why
     draw standard inverter symbol
         automatically generated symbol vs. custom symbol
         Warning: unique schematic pins must match unique symbol pins 1:1!
