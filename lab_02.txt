@@ -36,8 +36,14 @@ Topics:
             q - edit instance (object) properties
 
             r - rotate
-            m - stretch
-    Shift + m - move
+            m - stretch (conserves wiring and stretches it after what you are moving)
+    Shift + m - move (detaches what you are moving from the wiring it was connected to)
+
+            c - copy (explained 1-4)
+                1. select the devices or area you want to copy
+                2. press key 'c' for the copy command
+                3. select the 'origin' of your selection via left click
+                4. move your cursor to where you want to copy and left click again
 
             middle button (press and hold it while moving the mouse)
 
