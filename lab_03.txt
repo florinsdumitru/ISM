@@ -1,0 +1,44 @@
+Topics:
+
+0. Synchronization
+    execute git pull
+    recap inverter from previous lesson
+    optional: show what device fingers represent in the layout view in GPDK's case
+
+1. Task: draw custom inverter symbol and prepare inverter testbench
+    draw a custom inverter symbol
+        automatically generated symbol vs. custom symbol
+        Warning: unique schematic pins must match unique symbol pins 1:1!
+        selection boxes, demonstrate behavior on pdk transistors
+        setting the symbol's origin
+    draw inverter testbench schematic
+        the importance of 'gnd' (analogLib -> gnd)
+        Warning: never attempt to rename/override the ground net's name! (there are consequences)
+        using low value resistors or 0 V voltage sources to rename nets
+        how do global nets work? (examples: gnd! or vdd!)
+        DUT - device under test (lab_02 -> inv)
+        no connection symbol - basic -> noConn (used for warning suppression)
+        know your multiples (a f p n u m <--> k M G T)
+        labeling instances (VSRC_VDD, VSRC_VIN, I_DUT)
+        staying on-grid
+        test conditions (process = nominal, supply = 3.3 V, temp = 27 deg C, aka PVT)
+    configure ADE-XL testbench
+        there's an ADE-L hiding in there
+        checking for design variables
+        setting the analysis
+        saving outputs
+        Warning: do no run simulations (i.e. press the green button) from ADE-L
+        corners, getting the model file path, {NN, FF, SS, SF, FS} explained, bonus: {stat}
+        how can we manually netlist & having a look at a netlist
+    run testbench {.op} and review results
+        simulation output log (and in case of errors, identifying their source)
+        results browser
+        simulation database structure (dcOp, dc, tran, etc.)
+        .op sims are special (since they're only single points, the use of plotting them is limited)
+    reviewing results using VIVA - virtuoso visualization and analysis
+        cursors (keybindings V and H) vs. markers (keybindings M), marker pairs (M + D)
+        CTRL + scroll & SHIFT + scroll for playing with the X & Y axis
+        double check your setup -- I_VSRC_VDD = 222 uA, VOUT = 3.047 V
+        finally, intentionally interrupting ground
+2. Next time:
+    running testbenches {.dc .tran .ac}
